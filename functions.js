@@ -77,3 +77,57 @@ document.getElementById('addProduct').addEventListener('click', addProduct);
 
 //Load products when the page loads
 loadProductTable();
+
+// Function to export products to CSV
+function exportToCSV() {
+    // Get products from LocalStorage
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+
+    // Check if there are products to export
+    if (products.length === 0) {
+        alert("There are no products to export.");
+        return;
+    }
+
+    // CSV header
+    let csvContent = "ID,Name,Price\n";
+
+    // Add each product to the CSV
+    products.forEach(product => {
+        csvContent += `${product.id},"${product.name}",${product.price}\n`;
+    });
+
+    // Create a Blob with the CSV content
+    const blob = new Blob([csvContent], {
+        type: "text/csv;charset=utf-8;"
+    });
+
+    // Create a temporary download link
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", "products.csv");
+
+    // Add the link to the document
+    document.body.appendChild(link);
+
+    // Start the download
+    link.click();
+
+    // Remove the temporary link
+    document.body.removeChild(link);
+
+    // Release the URL
+    URL.revokeObjectURL(url);
+}
+
+
+// Event listener for the add product button
+document.getElementById('addProduct').addEventListener('click', addProduct);
+
+// Event listener for the export button
+document.getElementById('exportCsv').addEventListener('click', exportToCSV);
+
+// Load products when the page loads
+loadProductTable();
