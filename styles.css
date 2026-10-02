@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(#8412B0, #000);
+    background: linear-gradient(135deg, #FFF4E6, #FDE2C5);
     font-family: 'Consolas', sans-serif;
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ h1 {
     margin-top: 20px;
     font-size: 2.5em;
     display: inline;
-    text-shadow: 0 0 10px #FC199A, 0 0 20px #FC199A, 0 0 30px #FC199A, 0 0 40px #FF007F, 0 0 50px #FF007F;
+    text-shadow: 0 0 8px rgba(231,111,31,.35);
 }
 
 .container {
@@ -31,7 +31,7 @@ h1 {
 
 .formContainer {
     text-align: center;
-    background-color: #FF007F;
+    background-color: #C94F0A;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -40,7 +40,7 @@ h1 {
 }
 
 label {
-    color: #00FFFF;
+    color: #FFE8D1;
     font-size: 14px;
     margin-right: 10px;
 }
@@ -56,8 +56,8 @@ input {
 }
 
 button {
-    background-color: #FFCC00;
-    color: #8412B0;
+    background-color: #F4A261;
+    color: #7A3E12;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -67,7 +67,7 @@ button {
 }
 
 button:hover {
-    background-color: #FC199A;
+    background-color: #E76F1F;
     color: #fff;
 }
 
@@ -84,17 +84,17 @@ th, td {
 }
 
 th {
-    background-color: #FC199A;
+    background-color: #E76F1F;
     color: white;
 }
 
 td {
-    background-color: #00FFFF;
-    color: #8412B0;
+    background-color: #FFF8F0;
+    color: #7A3E12;
 }
 
 .delete-btn {
-    background-color: #f0745e;
+    background-color: #D97745;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -103,7 +103,7 @@ td {
 }
 
 .delete-btn:hover {
-    background-color: #ff0800;
+    background-color: #B9380A;
 }
 
 
