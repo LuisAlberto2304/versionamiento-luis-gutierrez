@@ -1,113 +1,289 @@
-body {
-    background: linear-gradient(135deg, #FFF4E6, #FDE2C5);
-    font-family: 'Consolas', sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-h1 {
-    color: #FFF;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 2.5em;
-    display: inline;
-    text-shadow: 0 0 8px rgba(231,111,31,.35);
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 50px;
-    width: 90%;
-    max-width: 1200px;
-}
-
-.formContainer {
-    text-align: center;
-    background-color: #C94F0A;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 20%;
-    margin-right: 20px;
-}
-
-label {
-    color: #FFE8D1;
-    font-size: 14px;
-    margin-right: 10px;
-}
-
-input {
-    padding: 8px;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
+* {
     box-sizing: border-box;
 }
 
-button {
-    background-color: #F4A261;
-    color: #7A3E12;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #fff4e6 0%,
+        #fde2c5 100%
+    );
+    font-family: 'Poppins', sans-serif;
+    color: #5c2f0a;
+}
+
+.page {
+    width: 92%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.pageHeader {
+    margin-bottom: 40px;
+}
+
+.eyebrow {
+    display: block;
+    color: #c94f0a;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+h1 {
+    margin: 0;
+    color: #7a3e12;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.pageHeader p {
+    margin: 10px 0 0;
+    color: #9a6a4a;
+    font-size: 15px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 28px;
+    width: 100%;
+    align-items: start;
+}
+
+.formContainer {
+    background: #c94f0a;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow:
+        0 10px 30px rgba(122, 62, 18, 0.15);
     width: 100%;
 }
 
+.sectionHeader {
+    margin-bottom: 28px;
+}
+
+.sectionHeader h2 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.sectionHeader p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.formContainer .sectionHeader h2 {
+    color: #ffffff;
+}
+
+.formContainer .sectionHeader p {
+    color: #ffe8d1;
+}
+
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffe8d1;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid transparent;
+    border-radius: 9px;
+    background-color: #fff8f0;
+    color: #5c2f0a;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input::placeholder {
+    color: #b99982;
+}
+
+input:focus {
+    border-color: #f4a261;
+    box-shadow:
+        0 0 0 3px rgba(244, 162, 97, 0.25);
+}
+
+button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 9px;
+    background-color: #f4a261;
+    color: #5c2f0a;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
 button:hover {
-    background-color: #E76F1F;
-    color: #fff;
+    background-color: #e76f1f;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow:
+        0 6px 15px rgba(122, 62, 18, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.tableContainer {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow:
+        0 10px 30px rgba(122, 62, 18, 0.10);
+}
+
+.tableHeader {
+    margin-bottom: 20px;
+}
+
+.tableHeader h2 {
+    color: #7a3e12;
+    margin: 0 0 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tableHeader p {
+    color: #9a6a4a;
+}
+
+.tableWrapper {
+    width: 100%;
+    overflow-x: auto;
 }
 
 table {
-    width: 60%;
-    border-collapse: collapse;
-    margin: 0 auto;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px 15px;
-    text-align: left;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    font-size: 13px;
 }
 
 th {
-    background-color: #E76F1F;
-    color: white;
+    padding: 14px 16px;
+    background-color: #e76f1f;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+}
+
+th:first-child {
+    border-top-left-radius: 8px;
+}
+
+th:last-child {
+    border-top-right-radius: 8px;
 }
 
 td {
-    background-color: #FFF8F0;
-    color: #7A3E12;
+    padding: 14px 16px;
+    background-color: #fffaf5;
+    color: #7a3e12;
+    border-bottom: 1px solid #f2dfcf;
+    text-align: left;
+}
+
+#productsTable tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+#productsTable tbody tr:hover td {
+    background-color: #fff0df;
+}
+
+#productsTable tbody tr:last-child td {
+    border-bottom: none;
 }
 
 .delete-btn {
-    background-color: #D97745;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+    width: auto;
+    margin: 0;
+    padding: 7px 12px;
+    background-color: #d97745;
+    color: #ffffff;
+    border-radius: 7px;
+    font-size: 12px;
 }
 
 .delete-btn:hover {
-    background-color: #B9380A;
+    background-color: #b9380a;
+    transform: none;
+}
+
+@media (max-width: 850px) {
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .formContainer {
+        width: 100%;
+    }
+
 }
 
 
-#productsTable tbody tr {
-    background-color: #FFF;
-    color: #000;
+@media (max-width: 600px) {
+
+    .page {
+        width: 94%;
+        padding: 30px 0;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .pageHeader {
+        margin-bottom: 28px;
+    }
+
+    .formContainer,
+    .tableContainer {
+        padding: 20px;
+    }
+
+    th,
+    td {
+        padding: 11px 12px;
+    }
+
 }
