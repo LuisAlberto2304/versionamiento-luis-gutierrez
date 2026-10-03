@@ -1,44 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example Data Table with LocalStorage</title>
+
+    <title>Product Manager</title>
+
+    <!-- Tipografía moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>Example Product List Web App</h1>
 
-    <div class="container">
+    <main class="page">
 
-        <div class="formContainer">
-            <label for="name">Product Name:</label>
-            <input type="text" id="name" placeholder="Enter product name">
+        <!-- Encabezado -->
+        <header class="pageHeader">
+            <div>
+                <span class="eyebrow">Aplicación de Luis Alberto Gutiérrez Palomares</span>
+                <h1>Lista de productos</h1>
+                <p>Maneja tus productos fácil y rápidamente.</p>
+            </div>
+        </header>
+
+
+        <!-- Contenido principal -->
+        <div class="container">
+
+            <!-- Formulario -->
+            <section class="formContainer">
+
+                <div class="sectionHeader">
+                    <h2>Agregar producto</h2>
+                    <p>Ingresa la información de un producto nuevo.</p>
+                </div>
+
+                <div class="formGroup">
+                    <label for="name">Nombre del producto</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Ingresa el nombre del producto"
+                    >
+                </div>
+
+                <div class="formGroup">
+                    <label for="price">Precio</label>
+
+                    <input
+                        type="number"
+                        id="price"
+                        placeholder="Ingresa el precio del producto"
+                        min="1"
+                    >
+                </div>
+                <button id="addProduct">
+                    Agregar producto
+                </button>
+                <div class="sectionHeader tableHeader">
+                <br>
+                <br>
+                    <button id="exportCsv" class="export-btn">
+                        Expotar a CSV
+                    </button>
+                </div>
+                
+            </section>
             
-            <label for="price">Price:</label>
-            <input type="number" id="price" placeholder="Enter product price" min="1">
-            
-            <button id="addProduct">Add Product</button>
+
+
+            <!-- Tabla -->
+            <section class="tableContainer">
+
+                <div class="sectionHeader tableHeader">
+                    <div>
+                        <h2>Productos</h2>
+                        <p>Productos registrados.</p>
+                    </div>
+                </div>
+
+                <div class="tableWrapper">
+
+                    <table id="productsTable">
+
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
         </div>
 
-      
-        <table id="productsTable">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-          
-            </tbody>
-        </table>
-    </div>
-
+    </main>
 
     <script src="functions.js"></script>
+
 </body>
+
 </html>
